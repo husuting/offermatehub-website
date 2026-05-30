@@ -1,0 +1,58 @@
+/* OfferMate Hub custom styles */
+
+/* ========== Danmaku 弹幕 ========== */
+.danmaku-container {
+  padding: 24px 0 40px;
+  overflow: hidden;
+}
+
+.danmaku-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 18px;
+  white-space: nowrap;
+}
+
+.danmaku-track {
+  display: flex;
+  flex-shrink: 0;
+  animation: danmaku-scroll var(--speed, 30s) linear infinite;
+}
+
+.danmaku-row:hover .danmaku-track {
+  animation-play-state: paused;
+}
+
+.danmaku-item {
+  display: inline-block;
+  flex-shrink: 0;
+  margin-right: 32px;
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.5;
+  backdrop-filter: blur(4px);
+}
+
+/* ========== 截图悬浮效果 ========== */
+.screen-shot {
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.screen-shot:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+}
+
+@keyframes danmaku-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
