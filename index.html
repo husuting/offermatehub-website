@@ -79,7 +79,7 @@
         "name": "OfferMateHub 是免费的吗？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "完全免费。所有核心功能——投递管理、面试日历、Offer对比、简历管理——都不收取任何费用。"
+          "text": "完全免费。所有核心功能——投递管理、面试日历、Offer对比、简历管理——都不收取任何费用。我们坚持免费，是希望每个求职者都能平等地使用好工具，不因经济条件受限。未来即使推出增值功能，基础功能也将永久免费。"
         }
       },
       {
@@ -87,7 +87,7 @@
         "name": "数据安全吗？如何备份？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "数据存储在你的微信小程序本地，不会上传到任何第三方服务器。你可以随时通过CSV导出功能备份数据。"
+          "text": "数据存储在微信小程序本地，不会上传到任何第三方服务器。你可以随时通过CSV导出功能将投递记录、Offer对比数据导出备份。建议定期导出保存，以防手机数据丢失。"
         }
       },
       {
@@ -95,7 +95,7 @@
         "name": "支持哪些平台？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "目前支持微信小程序，搜索OfferMateHub即可使用。iOS和Android版本正在规划中。"
+          "text": "目前支持微信小程序，在微信中搜索OfferMateHub即可使用，无需下载安装。iOS和Android独立App版本正在规划中，预计后续版本支持跨平台数据同步。Web端管理后台也在技术评估阶段，敬请期待。"
         }
       },
       {
@@ -103,7 +103,7 @@
         "name": "可以同时管理多个版本的简历吗？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "可以。支持创建多份简历并绑定到不同的投递岗位，投递时快速匹配对应资料。"
+          "text": "可以。在“简历管理”模块中可以创建多份简历，针对不同公司、不同岗位定制不同版本。投递时选择对应的简历即可快速匹配。例如投递技术岗和产品岗，可以使用侧重不同的两份简历，提高简历与岗位的匹配度。"
         }
       },
       {
@@ -111,7 +111,7 @@
         "name": "面试提醒如何设置？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "添加面试日期后，系统会自动在日历中标记。提醒功能需要手动开启，开启后会在面试前发送通知。"
+          "text": "在“面试日历”中添加面试日期后，系统会自动在日历月视图上标记。点击具体日期可以设置提醒闹钟，支持提前30分钟、1小时、1天等多种提醒时间。开启微信通知权限后，系统会在设定时间通过微信服务通知提醒你，确保不会错过任何一场面试。"
         }
       },
       {
@@ -119,7 +119,7 @@
         "name": "Offer对比可以比较哪些维度？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "底薪、奖金、试用期、五险一金、休息制度、年假、综合评价——七个维度横向对比，差异一目了然。"
+          "text": "底薪、奖金、试用期、五险一金、休息制度、年假、综合评价——共七个维度横向对比。输入每份Offer的数据后，系统自动生成对比表并高亮差异项。建议参照《劳动合同法》相关规定，重点关注五险一金缴纳基数和试用期薪资比例，这些往往是Offer中最容易被忽视但影响最大的部分。"
         }
       },
       {
@@ -127,9 +127,19 @@
         "name": "如何加入 MateHub 社区？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "在App首页点击 MateHub 按钮即可进入。可以浏览帖子、发布面经、参与Offer投票，和其他求职者交流互助。"
+          "text": "在小程序首页底部点击“MateHub”按钮即可进入社区。社区支持匿名发帖，可以分享面经、参与Offer投票、发布薪资信息供大家参考。所有帖子按“最新”和“热门”排序，优质内容会被加精推荐。社区倡导互助和真诚分享，拒绝广告和引流行为。"
+        }
+      },
+
+      {
+        "@type": "Question",
+        "name": "隐私和数据如何保护？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "我们高度重视你的隐私安全。所有投递记录、Offer数据和简历内容仅存储在你的微信小程序本地和你的个人云端备份中，不会用于任何商业用途。我们不会出售、分享或分析你的个人求职数据。CSV导出功能让你随时拥有数据的完整控制权。如需彻底清除数据，在小程序中一键删除即可。"
         }
       }
+
     ]
   }
 ]
@@ -167,7 +177,8 @@
 								<ul id="nav_menu" class="scroll">
 									<li><a href="#features">功能</a></li>
 									<li><a href="#how-it-works">使用流程</a></li>
-									<li><a href="#faq">常见问题</a></li>
+									<li><a href="#about">关于我们</a></li>
+											<li><a href="#faq">常见问题</a></li>
 										<li><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('2042949429@qq.com');this.textContent='已复制!';setTimeout(function(){this.textContent='联系我们'}.bind(this),1500)" title="2042949429@qq.com">联系我们</a></li>
 								</ul>
 						</div>
@@ -298,7 +309,7 @@
 					<div class="col-lg-10 m-auto">
 						<div class="heading text-center wow fadeInUp">
 							<h2>Offer 对比维度一览</h2>
-							<p>多个Offer怎么选？七个维度帮你理性决策</p>
+							<p>多个Offer怎么选？七个维度帮你理性决策。参照《劳动合同法》对薪资、试用期、五险一金、休息休假的规定，逐项对比不遗漏。</p>
 						</div>
 						<div class="table-responsive" style="margin-top:30px;">
 							<table class="table table-bordered" style="background:#fff;border-radius:12px;overflow:hidden;">
@@ -625,6 +636,31 @@
 		</div>
 	</div>
 	<!--::::: MORE FEATURE AREA END :::::::-->
+
+          <!--::::: ABOUT AREA START :::::::-->
+          <div id="about" class="feature_area section-padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 m-auto text-center">
+                  <div class="heading wow fadeInUp">
+                    <h1>关于 OfferMateHub</h1>
+                    <p>一个由求职者打造的求职管理工具</p>
+                  </div>
+                  <div class="space-20"></div>
+                  <p style="font-size:17px;line-height:2;color:#555;text-align:left;">
+                  OfferMateHub 诞生于一个真实痛点：当我们自己投了几十家公司、陆续收到多个Offer时，Excel和备忘录完全不够用了——薪资构成记不清、面试时间搞混、Offer优劣凭感觉判断。市面上不缺招聘平台，但缺一个真正站在求职者角度、帮你管理求职全流程的工具。
+                  </p>
+                  <p style="font-size:17px;line-height:2;color:#555;text-align:left;">
+                  我们是一支小团队，有产品经理、开发工程师和设计师——同时也是曾经的求职者。我们理解投简历到等通知的焦虑，也经历过多个Offer摆在面前不知道该怎么选的纠结。所以我们做了 OfferMateHub：一款免费、无广告、不卖简历的求职管理小程序。
+                  </p>
+                  <p style="font-size:17px;line-height:2;color:#555;text-align:left;">
+                  我们的理念很简单：<strong>每一份投递都值得被认真对待，每一个Offer都应该被理性评估。</strong>希望 OfferMateHub 能陪伴你走过求职的每一步，直到拿下心仪的Offer。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--::::: ABOUT AREA END :::::::-->
 		<!--::::: GEO Q&A AREA START :::::::-->
 		<div class="section-padding">
 			<div class="container">
@@ -683,7 +719,7 @@
 		<div class="danmaku-container">
 			<div class="danmaku-row" style="--speed: 28s;">
 				<div class="danmaku-track">
-					<span class="danmaku-item">之前用Excel管理投递总是漏掉面试，用了OfferMate再也没忘过！</span>
+					<span class="danmaku-item">之前用Excel管理投递总是漏掉面试，用了OfferMateHub再也没忘过！</span>
 					<span class="danmaku-item">面试日历太好用了，一目了然，已经拿到两个Offer了！</span>
 					<span class="danmaku-item">Offer对比功能帮我在两个Offer间做出了最理性的选择</span>
 					<span class="danmaku-item">流程管道让我清楚每家公司到了哪个阶段，心里有数！</span>
@@ -691,7 +727,7 @@
 					<span class="danmaku-item">简历管理功能很实用，不同岗位投不同版本的简历</span>
 				</div>
 				<div class="danmaku-track">
-					<span class="danmaku-item">之前用Excel管理投递总是漏掉面试，用了OfferMate再也没忘过！</span>
+					<span class="danmaku-item">之前用Excel管理投递总是漏掉面试，用了OfferMateHub再也没忘过！</span>
 					<span class="danmaku-item">面试日历太好用了，一目了然，已经拿到两个Offer了！</span>
 					<span class="danmaku-item">Offer对比功能帮我在两个Offer间做出了最理性的选择</span>
 					<span class="danmaku-item">流程管道让我清楚每家公司到了哪个阶段，心里有数！</span>
@@ -778,7 +814,7 @@
 
 						    <div id="cls1" class="collapse show" aria-labelledby="card1" data-parent="#accx">
 						      <div class="card-body">
-						      完全免费。所有核心功能——投递管理、面试日历、Offer对比、简历管理——都不收取任何费用。
+						      完全免费。所有核心功能——投递管理、面试日历、Offer对比、简历管理——都不收取任何费用。我们坚持免费，是希望每个求职者都能平等地使用好工具，不因经济条件受限。未来即使推出增值功能，基础功能也将永久免费。
 						      </div>
 						    </div>
 						  </div>
@@ -792,7 +828,7 @@
 						    </div>
 						    <div id="cls2" class="collapse" aria-labelledby="card2" data-parent="#accx">
 						      <div class="card-body">
-						      数据存储在云端服务，安全性有保证。你可以随时通过CSV导出功能备份数据。
+						      数据存储在微信小程序本地，不会上传到任何第三方服务器。你可以随时通过CSV导出功能将投递记录、Offer对比数据导出备份。建议定期导出保存，以防手机数据丢失。
 						      </div>
 						    </div>
 						  </div>
@@ -806,7 +842,7 @@
 						    </div>
 						    <div id="cls3" class="collapse" aria-labelledby="card3" data-parent="#accx">
 						      <div class="card-body">
-						      目前支持微信小程序，搜索"OfferMateHub"即可使用。iOS和Android版本正在规划中。
+						      目前支持微信小程序，在微信中搜索"OfferMateHub"即可使用，无需下载安装。iOS和Android独立App版本正在规划中，预计后续版本支持跨平台数据同步。Web端管理后台也在技术评估阶段，敬请期待。
 						      </div>
 						    </div>
 						  </div>
@@ -827,7 +863,7 @@
 
 						    <div id="cls4" class="collapse" aria-labelledby="card4" data-parent="#accx2">
 						      <div class="card-body">
-						      可以。支持创建多份简历并绑定到不同的投递岗位，投递时快速匹配对应资料。
+						      可以。在"简历管理"模块中可以创建多份简历，针对不同公司、不同岗位定制不同版本。投递时选择对应的简历即可快速匹配。例如投递技术岗和产品岗，可以使用侧重不同的两份简历，提高简历与岗位的匹配度。
 						      </div>
 						    </div>
 						  </div>
@@ -841,7 +877,7 @@
 						    </div>
 						    <div id="cls5" class="collapse" aria-labelledby="card5" data-parent="#accx2">
 						      <div class="card-body">
-						      添加面试日期后，系统会自动在日历中标记。提醒功能需要手动开启，开启后会在面试前发送通知。
+						      在"面试日历"中添加面试日期后，系统会自动在日历月视图上标记。点击具体日期可以设置提醒闹钟，支持提前30分钟、1小时、1天等多种提醒时间。开启微信通知权限后，系统会在设定时间通过微信服务通知提醒你，确保不会错过任何一场面试。
 						      </div>
 						    </div>
 						  </div>
@@ -855,7 +891,7 @@
 						    </div>
 						    <div id="cls6" class="collapse" aria-labelledby="card6" data-parent="#accx2">
 						      <div class="card-body">
-						      底薪、奖金、试用期、五险一金、休息制度、年假、综合评价——七个维度横向对比，差异一目了然。
+						      底薪、奖金、试用期、五险一金、休息制度、年假、综合评价——共七个维度横向对比。输入每份Offer的数据后，系统自动生成对比表并高亮差异项。建议参照《劳动合同法》相关规定，重点关注五险一金缴纳基数和试用期薪资比例，这些往往是Offer中最容易被忽视但影响最大的部分。
 						      </div>
 						    </div>
 						  </div>
@@ -869,10 +905,25 @@
 						    </div>
 						    <div id="cls7" class="collapse" aria-labelledby="card7" data-parent="#accx2">
 						      <div class="card-body">
-						      在App首页点击 MateHub 按钮即可进入。可以浏览帖子、发布面经、参与Offer投票，和其他求职者交流互助。
+						      在小程序首页底部点击"MateHub"按钮即可进入社区。社区支持匿名发帖，可以分享面经、参与Offer投票、发布薪资信息供大家参考。所有帖子按"最新"和"热门"排序，优质内容会被加精推荐。社区倡导互助和真诚分享，拒绝广告和引流行为。
 						      </div>
 						    </div>
 						  </div>
+                              <div class="card">
+                                <div class="card-header" id="card8">
+                                  <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#cls8" aria-expanded="false" aria-controls="cls8">
+                                      隐私和数据如何保护？
+                                    </button>
+                                  </h2>
+                                </div>
+                                <div id="cls8" class="collapse" aria-labelledby="card8" data-parent="#accx2">
+                                  <div class="card-body">
+                                      我们高度重视你的隐私安全。所有投递记录、Offer数据和简历内容仅存储在你的微信小程序本地和你的个人云端备份中，不会用于任何商业用途。我们不会出售、分享或分析你的个人求职数据。CSV导出功能让你随时拥有数据的完整控制权。如需彻底清除数据，在小程序中一键删除即可。
+                                  </div>
+                                </div>
+                              </div>
+
 						</div>
 					</div>
 				</div>
@@ -880,6 +931,31 @@
 		</div>
 	</div>
 	<!--::::: FAQ AREA END :::::::-->
+
+
+    <!--::::: FINAL CTA AREA START :::::::-->
+    <div class="section-padding text-center" style="background:linear-gradient(135deg, #7c5ce7 0%, #5b3cc4 100%);">
+      <div class="container">
+        <div class="wow fadeInUp">
+          <h2 style="color:#fff;font-size:36px;font-weight:700;">准备好管理你的求职之路了吗？</h2>
+          <p style="color:rgba(255,255,255,0.85);font-size:18px;margin:20px 0 30px;">扫码即用，永久免费，10秒开始记录第一份投递</p>
+          <span class="qr-btn-wrapper">
+            <a href="#" class="btn2" style="background:#fff;color:#7c5ce7;font-weight:600;padding:14px 40px;font-size:17px;">扫码使用</a>
+            <span class="qr-tooltip"><img src="assets/img/qr-code.jpg" alt="扫码使用OfferMateHub小程序" width="180" height="180"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!--::::: FINAL CTA AREA END :::::::-->
+
+    <!--::::: FOOTER AREA START :::::::-->
+    <footer style="background:#1c1b2e;padding:40px 0;text-align:center;">
+      <div class="container">
+        <p style="color:rgba(255,255,255,0.5);font-size:14px;margin:0;">&copy; 2026 OfferMateHub. All rights reserved.</p>
+        <p style="color:rgba(255,255,255,0.35);font-size:12px;margin:10px 0 0;">最后更新：2026年6月6日 &nbsp;|&nbsp; <a href="mailto:2042949429@qq.com" style="color:rgba(255,255,255,0.35);text-decoration:none;">2042949429@qq.com</a></p>
+      </div>
+    </footer>
+    <!--::::: FOOTER AREA END :::::::-->
 
 
 	<!--::::: ALL JS FILES :::::::-->
