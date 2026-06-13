@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="robots" content="index, follow">
+	<title>五险一金计算器 · 免费在线计算 | OfferMateHub</title>
+	<meta name="description" content="免费五险一金计算器，输入月薪和缴纳基数，自动计算个人和公司缴纳金额、到手工资。支持全额缴纳vs最低基数对比，Offer对比必备工具。">
+	<link rel="canonical" href="https://offermatehub.cn/wxyj-calculator.html">
+	<link rel="preload" href="assets/css/master.css" as="style">
+	<link rel="preload" href="style.css" as="style">
+	<meta property="og:title" content="五险一金计算器 · 免费在线计算 | OfferMateHub">
+	<meta property="og:description" content="免费五险一金计算器，输入月薪和缴纳基数，自动计算个人和公司缴纳金额、到手工资。">
+	<meta property="og:url" content="https://offermatehub.cn/wxyj-calculator.html">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="五险一金计算器 · 免费在线计算 | OfferMateHub">
+	<meta name="twitter:description" content="免费五险一金计算器，输入月薪和缴纳基数，自动计算个人和公司缴纳金额、到手工资。">
+	<link rel="icon" href="assets/img/logo/fabicon.png">
+	<link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+	<link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+	<link rel="stylesheet" href="assets/css/plugins/slicknav.css">
+	<link rel="stylesheet" href="assets/css/master.css">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.calc-container{max-width:720px;margin:0 auto}
+		.calc-card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:24px}
+		.calc-card h2{font-size:20px;margin-bottom:20px;color:#1c1b2e}
+		.calc-row{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:16px}
+		.calc-field{flex:1;min-width:180px}
+		.calc-field label{display:block;font-size:13px;font-weight:600;color:#6d859e;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+		.calc-field input,.calc-field select{width:100%;padding:10px 14px;border:2px solid #e8ecf1;border-radius:8px;font-size:16px;transition:border-color .2s;background:#f8f9fc}
+		.calc-field input:focus,.calc-field select:focus{outline:none;border-color:#7c5ce7}
+		.result-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:15px}
+		.result-table th{background:#7c5ce7;color:#fff;padding:12px 16px;text-align:left;font-weight:600}
+		.result-table th:first-child{border-radius:10px 0 0 0}
+		.result-table th:last-child{border-radius:0 10px 0 0}
+		.result-table td{padding:12px 16px;border-bottom:1px solid #eef1f5}
+		.result-table tr:last-child td{font-weight:700;background:#f8f0ff;border-bottom:none;border-radius:0 0 10px 10px}
+		.result-table .highlight{color:#7c5ce7;font-weight:700}
+		.result-table .company-col{color:#fca25d;font-weight:600}
+		.compare-box{border:2px dashed #e0d6f7;border-radius:12px;padding:20px;margin-top:20px;background:#faf8ff}
+		.compare-box h3{font-size:16px;color:#5b3cc4;margin-bottom:12px}
+		.gap-highlight{font-size:28px;font-weight:900;color:#7c5ce7;text-align:center;margin:12px 0}
+		.btn-calc{background:linear-gradient(135deg,#7c5ce7,#5b3cc4);color:#fff;border:none;padding:14px 40px;border-radius:10px;font-size:17px;font-weight:600;cursor:pointer;width:100%;transition:transform .15s,box-shadow .15s}
+		.btn-calc:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(124,92,231,.35)}
+		.info-section{font-size:15px;line-height:2;color:#555;margin-top:32px}
+		.info-section h3{font-size:22px;color:#1c1b2e;margin:28px 0 12px}
+		.info-section table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+		.info-section table th,.info-section table td{padding:10px 14px;border:1px solid #e8ecf1;text-align:left}
+		.info-section table th{background:#f8f9fc;font-weight:600}
+		.cta-banner{background:linear-gradient(135deg,#7c5ce7,#5b3cc4);border-radius:16px;padding:32px;text-align:center;color:#fff;margin-top:32px}
+		.cta-banner h3{color:#fff;font-size:22px;margin-bottom:8px}
+		.cta-banner p{color:rgba(255,255,255,.85);margin-bottom:20px}
+		.site-header{padding:16px 0;border-bottom:1px solid #eef1f5;margin-bottom:48px}
+		.site-header .logo img{width:48px;height:48px;border-radius:50%}
+		footer{background:#1c1b2e;padding:40px 0;text-align:center;margin-top:64px}
+		@media(max-width:576px){.calc-card{padding:20px}.calc-row{flex-direction:column}}
+	</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "五险一金计算器",
+  "description": "免费在线五险一金计算器，输入月薪和缴纳基数，自动计算个人和公司缴纳金额、到手工资。支持全额缴纳vs最低基数对比。",
+  "url": "https://offermatehub.cn/wxyj-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-6"><a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none"><img src="assets/img/logo/OfferMateLogo.webp" alt="OfferMateHub" style="width:48px;height:48px;border-radius:50%"><span style="font-weight:700;font-size:18px;color:#1c1b2e">OfferMateHub</span></a></div>
+			<div class="col-6 text-right"><a href="index.html" style="color:#7c5ce7;font-weight:600">← 返回首页</a></div>
+		</div>
+	</div>
+</header>
+
+<div class="container">
+	<div class="calc-container">
+
+		<h1 style="text-align:center;font-size:32px;font-weight:900;color:#1c1b2e;margin-bottom:8px">五险一金计算器</h1>
+		<p style="text-align:center;color:#6d859e;font-size:16px;margin-bottom:40px">输入月薪和缴纳基数，一键算清个人扣多少、公司交多少、实际到手多少</p>
+
+		<!-- 计算器 -->
+		<div class="calc-card" id="calculator">
+			<h2>📊 输入你的薪资信息</h2>
+			<div class="calc-row">
+				<div class="calc-field">
+					<label>税前月薪（元）</label>
+					<input type="number" id="salary" value="20000" min="1000" max="200000" step="100" placeholder="例如 20000">
+				</div>
+				<div class="calc-field">
+					<label>缴纳城市（影响比例范围）</label>
+					<select id="city">
+						<option value="default" selected>全国通用（默认）</option>
+						<option value="beijing">北京</option>
+						<option value="shanghai">上海</option>
+						<option value="guangzhou">广州</option>
+						<option value="shenzhen">深圳</option>
+						<option value="hangzhou">杭州</option>
+					</select>
+				</div>
+			</div>
+			<div class="calc-row">
+				<div class="calc-field">
+					<label>社保缴纳基数（元） <span style="font-weight:400;font-size:12px;color:#999">— 默认=月薪</span></label>
+					<input type="number" id="base" value="20000" min="1000" max="200000" step="100" placeholder="通常 = 月薪">
+				</div>
+				<div class="calc-field">
+					<label>公积金缴纳比例（%）</label>
+					<select id="fundRatio">
+						<option value="12" selected>12%（最高）</option>
+						<option value="10">10%</option>
+						<option value="8">8%</option>
+						<option value="7">7%</option>
+						<option value="5">5%（最低）</option>
+					</select>
+				</div>
+			</div>
+			<button class="btn-calc" onclick="calculate()">计算</button>
+
+			<div id="resultArea" style="margin-top:20px"></div>
+		</div>
+
+		<!-- 对比：全额 vs 最低基数 -->
+		<div class="calc-card" id="comparison">
+			<h2>🔍 全额缴纳 vs 最低基数缴纳 — 差距有多大？</h2>
+			<p style="color:#6d859e;font-size:14px;margin-bottom:16px">很多公司按当地最低基数（而非实际工资）缴纳五险一金。用这个对比看清真实的收入差距。</p>
+			<div class="calc-row">
+				<div class="calc-field">
+					<label>税前月薪（元）</label>
+					<input type="number" id="compSalary" value="20000" min="1000" max="200000" step="100">
+				</div>
+				<div class="calc-field">
+					<label>当地最低缴纳基数（元）</label>
+					<input type="number" id="compMinBase" value="4000" min="1000" max="50000" step="100" placeholder="例如 北京≈6326">
+				</div>
+				<div class="calc-field">
+					<label>公积金比例（%）</label>
+					<select id="compFundRatio">
+						<option value="12" selected>12%</option>
+						<option value="10">10%</option>
+						<option value="8">8%</option>
+						<option value="7">7%</option>
+						<option value="5">5%</option>
+					</select>
+				</div>
+			</div>
+			<button class="btn-calc" onclick="compare()">查看差距</button>
+			<div id="compareArea" style="margin-top:20px"></div>
+		</div>
+
+		<!-- SEO 内容 -->
+		<div class="info-section">
+			<h2>什么是五险一金？</h2>
+			<p>五险一金是中国法定的社会保险和住房公积金制度，由<strong>个人和公司按比例共同缴纳</strong>。五险包括：养老保险、医疗保险、失业保险、工伤保险和生育保险；一金指的是住房公积金。《社会保险法》和《住房公积金管理条例》规定，用人单位必须为员工缴纳五险一金。</p>
+
+			<h3>五险一金缴纳比例表（全国通用参考）</h3>
+			<div style="overflow-x:auto">
+			<table>
+				<thead>
+					<tr><th>项目</th><th>个人缴纳</th><th>公司缴纳</th><th>说明</th></tr>
+				</thead>
+				<tbody>
+					<tr><td><strong>养老保险</strong></td><td class="highlight">8%</td><td class="company-col">16%</td><td>累计缴满15年，退休后按月领取</td></tr>
+					<tr><td><strong>医疗保险</strong></td><td class="highlight">2%</td><td class="company-col">8%-10%</td><td>日常看病报销、医保个人账户</td></tr>
+					<tr><td><strong>失业保险</strong></td><td class="highlight">0.5%</td><td class="company-col">0.5%</td><td>非自愿离职可领取失业金</td></tr>
+					<tr><td><strong>工伤保险</strong></td><td class="highlight">0%</td><td class="company-col">0.2%-1.9%</td><td>个人不缴，公司全额缴纳</td></tr>
+					<tr><td><strong>生育保险</strong></td><td class="highlight">0%</td><td class="company-col">0.5%-1%</td><td>已并入医疗保险</td></tr>
+					<tr style="background:#faf8ff"><td><strong>住房公积金</strong></td><td class="highlight">5%-12%</td><td class="company-col">5%-12%</td><td>可提取用于购房、租房、还贷</td></tr>
+				</tbody>
+			</table>
+			</div>
+			<p style="font-size:13px;color:#999">* 各地比例略有差异，以当地社保局和公积金中心公布为准。上表为全国通用参考值。</p>
+
+			<h3>为什么五险一金在Offer对比中至关重要？</h3>
+			<p>同样是月薪20,000元的Offer：</p>
+			<ul>
+				<li><strong>A公司</strong>按实际工资全额缴纳公积金12%：每月公积金账户入账 <strong>4,800元</strong>（个人2,400 + 公司2,400）</li>
+				<li><strong>B公司</strong>按最低基数4,000元缴纳公积金5%：每月公积金账户入账 <strong>400元</strong>（个人200 + 公司200）</li>
+			</ul>
+			<p><strong>仅公积金一项，每月差距4,400元，一年52,800元。</strong>加上社保基数的差异，综合差距可能超过6万元/年。这就是为什么Offer对比不能只看月薪——<strong>五险一金的缴纳方式，相当于隐性的年薪差距。</strong></p>
+
+			<h3>常见问题</h3>
+			<h4 style="font-size:16px;color:#1c1b2e;margin-top:16px">公司按最低基数缴纳合法吗？</h4>
+			<p>《社会保险法》第十二条规定，用人单位应当按照国家规定的本单位职工工资总额的比例缴纳基本养老保险费。严格来说，<strong>按最低基数而非实际工资缴纳是不合规的</strong>。但实际执行中，部分企业仍按最低基数操作。求职时，主动问清楚"五险一金的缴纳基数"，是保护自己权益的关键一步。</p>
+
+			<h4 style="font-size:16px;color:#1c1b2e;margin-top:16px">公积金是"自己的钱"吗？</h4>
+			<p>是的。住房公积金个人和公司缴纳的部分<strong>全部进入你的个人公积金账户</strong>，可用于购房（公积金贷款利率远低于商贷）、租房提取、还房贷、装修、大病医疗等。离职或退休时可全额提取。公积金比例越高，相当于公司给你的"隐形收入"越多。</p>
+		</div>
+
+		<!-- CTA -->
+		<div class="cta-banner">
+			<h3>算清了五险一金，下一步：对比多个Offer</h3>
+			<p>把底薪、奖金、试用期、五险一金、休息制度、年假、发展空间——7个维度一起填进OfferMateHub，自动生成对比表。</p>
+			<a href="index.html" style="display:inline-block;background:#fff;color:#7c5ce7;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none">了解 OfferMateHub →</a>
+			<p style="font-size:14px;margin-top:12px;opacity:.75">微信搜「OfferMateHub」小程序直接使用，永久免费</p>
+		</div>
+
+	</div>
+</div>
+
+<footer>
+	<div class="container">
+		<p style="color:rgba(255,255,255,.5);font-size:14px;margin:0">&copy; 2026 OfferMateHub. All rights reserved.</p>
+		<p style="color:rgba(255,255,255,.35);font-size:12px;margin:10px 0 0"><a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none">首页</a> &nbsp;|&nbsp; <a href="wxyj-calculator.html" style="color:rgba(255,255,255,.35);text-decoration:none">五险一金计算器</a> &nbsp;|&nbsp; <a href="rest-calculator.html" style="color:rgba(255,255,255,.35);text-decoration:none">双休vs单休计算器</a> &nbsp;|&nbsp; <a href="templates.html" style="color:rgba(255,255,255,.35);text-decoration:none">求职模板</a> &nbsp;|&nbsp; <a href="interview-checklist.html" style="color:rgba(255,255,255,.35);text-decoration:none">面试清单</a> &nbsp;|&nbsp; <a href="offer-cases.html" style="color:rgba(255,255,255,.35);text-decoration:none">Offer案例</a> &nbsp;|&nbsp; <a href="mailto:2042949429@qq.com" style="color:rgba(255,255,255,.35);text-decoration:none">2042949429@qq.com</a> &nbsp;|&nbsp; <a href="https://github.com/husuting/offermatehub" target="_blank" rel="noopener" style="color:rgba(255,255,255,.35);text-decoration:none">GitHub</a></p>
+	</div>
+</footer>
+
+<script>
+function calculate(){
+	var salary=parseFloat(document.getElementById('salary').value)||0;
+	var base=parseFloat(document.getElementById('base').value)||salary;
+	var fundRatio=parseFloat(document.getElementById('fundRatio').value)/100;
+	var city=document.getElementById('city').value;
+
+	// 城市比例微调
+	var pensionC=0.16, medicalC=0.09, unempC=0.005, injuryC=0.004, birthC=0.008;
+	var pensionP=0.08, medicalP=0.02, unempP=0.005;
+	if(city==='beijing'){medicalC=0.098;injuryC=0.004}
+	else if(city==='shanghai'){medicalC=0.095}
+	else if(city==='guangzhou'){medicalC=0.055}
+	else if(city==='shenzhen'){medicalC=0.06}
+
+	var companyPension=base*pensionC, companyMedical=base*medicalC, companyUnemp=base*unempC, companyInjury=base*injuryC, companyBirth=base*birthC;
+	var personalPension=base*pensionP, personalMedical=base*medicalP, personalUnemp=base*unempP;
+	var personalFund=base*fundRatio, companyFund=base*fundRatio;
+
+	var totalCompany=companyPension+companyMedical+companyUnemp+companyInjury+companyBirth+companyFund;
+	var totalPersonal=personalPension+personalMedical+personalUnemp+personalFund;
+	var netSalary=salary-totalPersonal;
+
+	var html='<table class="result-table"><thead><tr><th>项目</th><th>个人缴纳（元）</th><th>公司缴纳（元）</th><th>合计（元）</th></tr></thead><tbody>';
+	html+=row('养老保险',personalPension,companyPension);
+	html+=row('医疗保险',personalMedical,companyMedical);
+	html+=row('失业保险',personalUnemp,companyUnemp);
+	html+=row('工伤保险',0,companyInjury);
+	html+=row('生育保险',0,companyBirth);
+	html+=row('住房公积金',personalFund,companyFund);
+	html+='<tr style="font-weight:700;background:#faf8ff"><td><strong>合计</strong></td><td class="highlight">'+fmt(totalPersonal)+'</td><td class="company-col">'+fmt(totalCompany)+'</td><td><strong>'+fmt(totalPersonal+totalCompany)+'</strong></td></tr>';
+	html+='</tbody></table>';
+
+	html+='<div style="background:#f0edff;border-radius:12px;padding:20px;margin-top:20px;text-align:center">';
+	html+='<div style="font-size:14px;color:#6d859e;margin-bottom:4px">税前月薪 <span style="font-size:18px;font-weight:700;color:#1c1b2e">'+fmt(salary)+' 元</span></div>';
+	html+='<div style="font-size:14px;color:#6d859e;margin-bottom:8px">个人五险一金扣除 <span style="color:#e74c3c;font-weight:700">-'+fmt(totalPersonal)+' 元</span> &nbsp; 公积金入账 <span style="color:#27ae60;font-weight:700">+'+fmt(personalFund+companyFund)+' 元</span></div>';
+	html+='<div style="font-size:22px;font-weight:900;color:#7c5ce7">实际到手 <span style="font-size:32px">'+fmt(netSalary)+'</span> 元/月</div>';
+	html+='<div style="font-size:13px;color:#999;margin-top:4px">公积金账户每月累计 '+fmt(personalFund+companyFund)+' 元（可用于购房、租房、还贷）</div>';
+	html+='</div>';
+
+	document.getElementById('resultArea').innerHTML=html;
+}
+
+function compare(){
+	var salary=parseFloat(document.getElementById('compSalary').value)||0;
+	var minBase=parseFloat(document.getElementById('compMinBase').value)||0;
+	var fundRatio=parseFloat(document.getElementById('compFundRatio').value)/100;
+
+	function calcTotal(base){
+		var pp=base*0.08, pm=base*0.02, pu=base*0.005;
+		var pf=base*fundRatio, cf=base*fundRatio;
+		var cp=base*0.16, cm=base*0.09, cu=base*0.005, ci=base*0.004, cb=base*0.008;
+		return {personal:pp+pm+pu+pf, company:cp+cm+cu+ci+cb+cf, fundPersonal:pf, fundCompany:cf};
+	}
+
+	var full=calcTotal(salary);
+	var min=calcTotal(minBase);
+	var diffCompany=full.company+full.fundCompany-(min.company+min.fundCompany);
+	var diffFund=full.fundPersonal+full.fundCompany-(min.fundPersonal+min.fundCompany);
+	var netFull=salary-full.personal;
+	var netMin=salary-min.personal;
+	var diffAll=(full.company+full.fundCompany)-(min.company+min.fundCompany);
+
+	var html='<div class="compare-box">';
+	html+='<h3>对比结果</h3>';
+	html+='<table class="result-table"><thead><tr><th></th><th>全额缴纳（基数 '+fmt(salary)+'）</th><th>最低基数（基数 '+fmt(minBase)+'）</th><th>差距</th></tr></thead><tbody>';
+	html+=row2('个人五险一金扣除',full.personal,min.personal);
+	html+=row2('公司五险一金缴纳',full.company+full.fundCompany,min.company+min.fundCompany);
+	html+=row2('公积金每月入账',full.fundPersonal+full.fundCompany,min.fundPersonal+min.fundCompany);
+	html+=row2('实际到手工资',netFull,netMin);
+	html+='</tbody></table>';
+	html+='<div class="gap-highlight">每年差距约 <span style="font-size:36px">'+fmt(diffAll*12)+'</span> 元</div>';
+	html+='<p style="text-align:center;color:#6d859e;font-size:14px">公司少缴纳的部分 = 你损失的收入。公积金差额 ' +fmt(diffFund)+'/月 = '+fmt(diffFund*12)+'/年。</p>';
+	html+='</div>';
+
+	document.getElementById('compareArea').innerHTML=html;
+}
+
+function row(name,personal,company){return '<tr><td>'+name+'</td><td class="highlight">'+fmt(personal)+'</td><td class="company-col">'+fmt(company)+'</td><td>'+fmt(personal+company)+'</td></tr>'}
+function row2(name,a,b){var d=a-b;return '<tr><td>'+name+'</td><td>'+fmt(a)+'</td><td>'+fmt(b)+'</td><td style="color:'+(d>=0?'#7c5ce7':'#e74c3c')+';font-weight:600">'+(d>=0?'+':'')+fmt(d)+'</td></tr>'}
+function fmt(n){return n.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+
+// 页面加载时自动计算
+calculate();
+compare();
+</script>
+</body>
+</html>

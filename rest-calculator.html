@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <title>双休vs单休差距计算器 · 免费在线计算 | OfferMateHub</title>
+    <meta name="description" content="输入月薪，自动对比双休和单休的时薪、年工作天数、年收入差距。单休一年多上50天班，时薪可能比双休更低——用数据看清休息制度的价值。">
+    <link rel="canonical" href="https://offermatehub.cn/rest-calculator.html">
+    <link rel="preload" href="assets/css/master.css" as="style">
+    <link rel="preload" href="style.css" as="style">
+    <meta property="og:title" content="双休vs单休差距计算器 · 免费在线计算 | OfferMateHub">
+    <meta property="og:description" content="输入月薪，自动对比双休和单休的时薪、年工作天数。单休一年多上50天班。">
+    <meta property="og:url" content="https://offermatehub.cn/rest-calculator.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="双休vs单休差距计算器 | OfferMateHub">
+    <meta name="twitter:description" content="输入月薪，自动对比双休和单休的时薪、年工作天数。">
+    <link rel="icon" href="assets/img/logo/fabicon.png">
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/slicknav.css">
+    <link rel="stylesheet" href="assets/css/master.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .calc-container{max-width:780px;margin:0 auto}
+        .calc-card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:24px}
+        .calc-card h2{font-size:20px;margin-bottom:20px;color:#1c1b2e}
+        .calc-row{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:16px}
+        .calc-field{flex:1;min-width:160px}
+        .calc-field label{display:block;font-size:13px;font-weight:600;color:#6d859e;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+        .calc-field input,.calc-field select{width:100%;padding:10px 14px;border:2px solid #e8ecf1;border-radius:8px;font-size:16px;transition:border-color .2s;background:#f8f9fc}
+        .calc-field input:focus,.calc-field select:focus{outline:none;border-color:#7c5ce7}
+        .result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:20px}
+        .result-item{text-align:center;padding:20px 12px;border-radius:12px;background:#f8f9fc}
+        .result-item .label{font-size:13px;color:#6d859e;margin-bottom:6px}
+        .result-item .value{font-size:28px;font-weight:900;color:#1c1b2e}
+        .result-item .value.highlight{color:#7c5ce7}
+        .result-item .value.danger{color:#e74c3c}
+        .compare-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:15px}
+        .compare-table th{background:#7c5ce7;color:#fff;padding:12px 16px;text-align:left;font-weight:600}
+        .compare-table th:first-child{border-radius:10px 0 0 0}
+        .compare-table th:last-child{border-radius:0 10px 0 0}
+        .compare-table th:nth-child(2){background:#fca25d}
+        .compare-table td{padding:12px 16px;border-bottom:1px solid #eef1f5}
+        .compare-table tr:last-child td{font-weight:700;background:#f8f0ff;border-bottom:none}
+        .compare-table .diff-col{font-weight:700;color:#e74c3c}
+        .rest-option{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+        .rest-option label{cursor:pointer;flex:1;min-width:120px;display:flex;align-items:center;gap:8px;padding:12px 16px;border:2px solid #e8ecf1;border-radius:10px;font-size:15px;font-weight:500;transition:all .2s}
+        .rest-option label:hover{border-color:#7c5ce7}
+        .rest-option input[type=radio]{display:none}
+        .rest-option input[type=radio]:checked+span{padding:0}
+        .rest-option input[type=radio]:checked~span{color:#7c5ce7}
+        .rest-option:has(input:checked){border-color:#7c5ce7;background:#f8f0ff}
+        .btn-calc{background:linear-gradient(135deg,#7c5ce7,#5b3cc4);color:#fff;border:none;padding:14px 40px;border-radius:10px;font-size:17px;font-weight:600;cursor:pointer;width:100%;transition:transform .15s,box-shadow .15s}
+        .btn-calc:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(124,92,231,.35)}
+        .insight-box{border-left:4px solid #7c5ce7;background:#f8f0ff;padding:16px 20px;border-radius:0 8px 8px 0;margin-top:16px;font-size:15px;line-height:1.8;color:#555}
+        .info-section{font-size:15px;line-height:2;color:#555;margin-top:32px}
+        .info-section h3{font-size:22px;color:#1c1b2e;margin:28px 0 12px}
+        .info-section table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+        .info-section table th,.info-section table td{padding:10px 14px;border:1px solid #e8ecf1;text-align:left}
+        .info-section table th{background:#f8f9fc;font-weight:600}
+        .cta-banner{background:linear-gradient(135deg,#7c5ce7,#5b3cc4);border-radius:16px;padding:32px;text-align:center;color:#fff;margin-top:32px}
+        .cta-banner h3{color:#fff;font-size:22px;margin-bottom:8px}
+        .cta-banner p{color:rgba(255,255,255,.85);margin-bottom:20px}
+        .site-header{padding:16px 0;border-bottom:1px solid #eef1f5;margin-bottom:48px}
+        .site-header .logo img{width:48px;height:48px;border-radius:50%}
+        footer{background:#1c1b2e;padding:40px 0;text-align:center;margin-top:64px}
+        @media(max-width:576px){.calc-card{padding:20px}.result-grid{grid-template-columns:1fr}.calc-row{flex-direction:column}}
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <a href="index.html" class="logo"><img src="assets/img/logo/OfferMateLogo.webp" alt="OfferMateHub"></a>
+            </div>
+            <div class="col text-right">
+                <a href="index.html" style="color:#6d859e;text-decoration:none;font-size:14px">&larr; 回首页</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container calc-container">
+
+    <div style="text-align:center;margin-bottom:40px">
+        <h1 style="font-size:36px;color:#1c1b2e;margin-bottom:12px">双休 vs 单休：差距有多大？</h1>
+        <p style="font-size:17px;color:#6d859e;max-width:560px;margin:0 auto">输入月薪，自动算出两种休息制度下的时薪、年工作天数、年收入差距。</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="calc-card">
+        <h2>休息制度差距计算器</h2>
+        <div class="calc-row">
+            <div class="calc-field">
+                <label>月薪（元）</label>
+                <input type="number" id="salary" placeholder="例如：15000" value="15000" min="0" step="100">
+            </div>
+            <div class="calc-field">
+                <label>加班费计算基数（元）</label>
+                <input type="number" id="overtimeBase" placeholder="默认等于月薪" value="15000" min="0" step="100">
+            </div>
+        </div>
+        <div class="calc-row">
+            <div class="calc-field">
+                <label>单休加班费倍数</label>
+                <select id="otMultiplier">
+                    <option value="2" selected>2倍（休息日加班标准）</option>
+                    <option value="1">1倍（无加班费）</option>
+                    <option value="1.5">1.5倍</option>
+                </select>
+            </div>
+            <div class="calc-field">
+                <label>法定节假日（天/年）</label>
+                <input type="number" id="holidays" value="11" min="0" max="30" step="1">
+            </div>
+        </div>
+        <button class="btn-calc" onclick="calculate()">计算差距</button>
+
+        <div class="result-grid" id="results" style="display:none">
+            <div class="result-item">
+                <div class="label">双休 · 时薪</div>
+                <div class="value highlight" id="hourly2">-</div>
+                <div style="font-size:12px;color:#999;margin-top:4px" id="days2">-</div>
+            </div>
+            <div class="result-item" style="background:#fff5f5">
+                <div class="label">单休 · 时薪</div>
+                <div class="value danger" id="hourly1">-</div>
+                <div style="font-size:12px;color:#999;margin-top:4px" id="days1">-</div>
+            </div>
+            <div class="result-item">
+                <div class="label">时薪差距</div>
+                <div class="value danger" id="gap">-</div>
+                <div style="font-size:12px;color:#999;margin-top:4px" id="gapPercent">-</div>
+            </div>
+        </div>
+
+        <div class="insight-box" id="insight" style="display:none"></div>
+    </div>
+
+    <!-- Detail table -->
+    <div class="calc-card" id="detailCard" style="display:none">
+        <h2>详细对比</h2>
+        <div style="overflow-x:auto">
+            <table class="compare-table" id="detailTable"></table>
+        </div>
+    </div>
+
+    <!-- SEO content -->
+    <div class="calc-card info-section">
+        <h3>为什么"休息制度"是Offer对比的重要维度？</h3>
+
+        <p>两个Offer月薪看起来差不多——但一个是双休，一个是单休。表面工资一样，实际每小时劳动报酬差距巨大。</p>
+
+        <h3>双休 vs 单休：基本数据对比</h3>
+
+        <table>
+            <thead><tr><th>项目</th><th>双休</th><th>单休</th><th>大小周</th></tr></thead>
+            <tbody>
+                <tr><td>每周休息天数</td><td>2天</td><td>1天</td><td>平均1.5天</td></tr>
+                <tr><td>每周工作天数</td><td>5天</td><td>6天</td><td>5.5天</td></tr>
+                <tr><td>年工作天数（扣除11天法定假日）</td><td>~250天</td><td>~302天</td><td>~276天</td></tr>
+                <tr><td>比双休多工作</td><td>-</td><td>+52天/年</td><td>+26天/年</td></tr>
+            </tbody>
+        </table>
+
+        <p><strong>单休一年多上52天班</strong>——相当于比别人多工作了近2个月。而月薪可能完全一样。</p>
+
+        <h3>时薪对比：同样的月薪，单休时薪可能更低</h3>
+
+        <p>假设月薪 15,000 元：</p>
+        <ul>
+            <li><strong>双休时薪</strong> = 15,000 ÷ (250天 ÷ 12月 × 8小时) ≈ <strong>90 元/小时</strong></li>
+            <li><strong>单休时薪</strong> = 15,000 ÷ (302天 ÷ 12月 × 8小时) ≈ <strong>74.5 元/小时</strong></li>
+        </ul>
+
+        <p>如果两个Offer月薪相同，单休版本的<strong>实际时薪比双休低了约17%</strong>。这意味着：要让单休的时薪和双休持平，月薪需要高20%以上。</p>
+
+        <h3>劳动合同法怎么说？</h3>
+
+        <p>根据《劳动法》第三十六条和第三十八条，标准工时为每日不超过8小时、平均每周不超过44小时，且用人单位应当保证劳动者每周至少休息一日。因此"单休"本身<strong>不一定违法</strong>——但超过40小时/周的部分属于加班，应按休息日加班标准支付2倍工资。</p>
+
+        <p>实际中，很多企业尤其是中小企业和创业公司，并不会为单休多支付加班费。这就是为什么<strong>Offer对比时，休息制度必须纳入考量</strong>。</p>
+
+        <h3>Offer对比时，休息制度应该怎么评估？</h3>
+
+        <p>用 OfferMateHub 做Offer对比时，休息制度是7个维度之一。我们的建议：</p>
+        <ol>
+            <li><strong>先算时薪</strong>——不要把月薪当唯一标准，折成时薪再比</li>
+            <li><strong>确认是否有加班费</strong>——没有加班费的单休，实际是被降薪</li>
+            <li><strong>考虑生活品质</strong>——每周少休1天，意味着少了52天可支配时间</li>
+            <li><strong>大小周是折中方案</strong>——比单休好，但比双休一年多上26天班</li>
+        </ol>
+    </div>
+
+    <div class="cta-banner">
+        <h3>休息制度只是 Offer 对比的第4个维度</h3>
+        <p>还有底薪、奖金、试用期、五险一金、年假、发展空间——7个维度在 OfferMateHub 里一起填，自动生成对比表。</p>
+        <a href="index.html" style="display:inline-block;background:#fff;color:#7c5ce7;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none">了解 OfferMateHub →</a>
+        <p style="font-size:14px;margin-top:12px;opacity:.75">微信搜「OfferMateHub」小程序直接使用，永久免费</p>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p style="color:rgba(255,255,255,.5);font-size:14px;margin:0">&copy; 2026 OfferMateHub. All rights reserved.</p>
+        <p style="color:rgba(255,255,255,.35);font-size:12px;margin:10px 0 0">
+            <a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none">首页</a> &nbsp;|&nbsp;
+            <a href="wxyj-calculator.html" style="color:rgba(255,255,255,.35);text-decoration:none">五险一金计算器</a> &nbsp;|&nbsp;
+            <a href="templates.html" style="color:rgba(255,255,255,.35);text-decoration:none">求职模板</a> &nbsp;|&nbsp;
+            <a href="mailto:2042949429@qq.com" style="color:rgba(255,255,255,.35);text-decoration:none">2042949429@qq.com</a>
+        </p>
+    </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "双休vs单休差距计算器",
+  "description": "输入月薪，自动对比双休和单休的时薪、年工作天数、年收入差距。",
+  "url": "https://offermatehub.cn/rest-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}
+}
+</script>
+
+<script>
+function fmt(n){return n.toLocaleString('zh-CN',{maximumFractionDigits:0})}
+function fmt2(n){return n.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2})}
+
+function calculate(){
+    var salary=parseFloat(document.getElementById('salary').value)||0;
+    var otBase=parseFloat(document.getElementById('overtimeBase').value)||salary;
+    var otMult=parseFloat(document.getElementById('otMultiplier').value);
+    var holidays=parseFloat(document.getElementById('holidays').value)||11;
+
+    // Work days per year
+    var weeks=52;
+    var days2=weeks*5 - holidays; // 双休 ~250
+    var days1=weeks*6 - holidays; // 单休 ~302
+    var daysMid=weeks*5.5 - holidays; // 大小周 ~276
+
+    // Monthly work hours
+    var hours2perMonth=days2/12*8;
+    var hours1perMonth=days1/12*8;
+
+    // Base salary only (overtime calculated separately)
+    var hourly2=salary/hours2perMonth;
+    var hourly1Base=salary/hours1perMonth;
+
+    // Overtime pay for 单休 (the extra day per week)
+    var extraDaysPerYear=days1-days2; // ~52 days
+    var extraHoursPerYear=extraDaysPerYear*8;
+    var dailyOtRate=(otBase/21.75)*otMult;
+    var yearlyOtPay=dailyOtRate*extraDaysPerYear;
+    var monthlyOtPay=yearlyOtPay/12;
+    var totalMonthlySingle=salary+monthlyOtPay;
+    var hourly1WithOt=totalMonthlySingle/hours1perMonth;
+
+    // Results
+    document.getElementById('hourly2').textContent=fmt(hourly2)+' 元/时';
+    document.getElementById('days2').textContent='年工作 ~'+Math.round(days2)+' 天';
+    document.getElementById('hourly1').textContent=fmt(hourly1Base)+' 元/时';
+    document.getElementById('days1').textContent='年工作 ~'+Math.round(days1)+' 天';
+
+    var gapVal=hourly2-hourly1Base;
+    var gapPct=(gapVal/hourly2*100);
+    document.getElementById('gap').textContent=fmt(gapVal)+' 元/时';
+    document.getElementById('gapPercent').textContent='单休时薪低 '+gapPct.toFixed(1)+'%';
+
+    document.getElementById('results').style.display='';
+    document.getElementById('detailCard').style.display='';
+
+    // Insight
+    var insight='';
+    if(otMult===0||otMult===1){
+        insight='<strong>关键发现：</strong>如果公司不为单休支付加班费（或仅1倍），你的实际时薪比双休低了 <strong>'+gapPct.toFixed(1)+'%</strong>。月薪 '+fmt(salary)+' 元在单休下，相当于双休的月薪仅 '+fmt(salary*(1-gapPct/100))+' 元。要让单休时薪和双休持平，月薪需要达到 <strong>'+fmt(Math.round(salary*hours1perMonth/hours2perMonth))+' 元</strong>（增幅 '+(hours1perMonth/hours2perMonth*100-100).toFixed(0)+'%）。';
+    }else{
+        insight='<strong>关键发现：</strong>单休时薪（不含加班费）为 '+fmt(hourly1Base)+' 元/时，比双休低 '+gapPct.toFixed(1)+'%。若公司按 '+otMult+' 倍支付休息日加班费，每月加班费约 <strong>'+fmt(monthlyOtPay)+' 元</strong>，含加班费后实际月收入 '+fmt(totalMonthlySingle)+' 元，折合时薪 '+fmt(hourly1WithOt)+' 元/时。';
+    }
+
+    document.getElementById('insight').style.display='';
+    document.getElementById('insight').innerHTML=insight;
+
+    // Detail table
+    var otNote=otMult===1?'（无加班费）':'（'+otMult+'倍，约'+fmt(monthlyOtPay)+'元/月）';
+    var html='<thead><tr><th>对比维度</th><th>双休</th><th>单休</th><th>差距</th></tr></thead><tbody>';
+    html+='<tr><td>每周休息</td><td>2天</td><td>1天</td><td class="diff-col">少休52天/年</td></tr>';
+    html+='<tr><td>年工作天数</td><td>~'+Math.round(days2)+'天</td><td>~'+Math.round(days1)+'天</td><td class="diff-col">+'+Math.round(days1-days2)+'天</td></tr>';
+    html+='<tr><td>月工作小时</td><td>~'+Math.round(hours2perMonth)+'h</td><td>~'+Math.round(hours1perMonth)+'h</td><td class="diff-col">+'+Math.round(hours1perMonth-hours2perMonth)+'h/月</td></tr>';
+    html+='<tr><td>时薪（基础）</td><td>'+fmt2(hourly2)+' 元</td><td>'+fmt2(hourly1Base)+' 元</td><td class="diff-col">'+fmt2(gapVal)+' 元</td></tr>';
+    html+='<tr><td>加班费</td><td>-</td><td>'+otNote+'</td><td class="diff-col">-</td></tr>';
+    html+='<tr><td>月收入（含加班费）</td><td>'+fmt(salary)+' 元</td><td>'+fmt(totalMonthlySingle)+' 元</td><td class="diff-col">'+(totalMonthlySingle>salary?'+':'')+fmt(totalMonthlySingle-salary)+' 元</td></tr>';
+    html+='<tr><td>年收入（含加班费）</td><td>'+fmt(salary*12)+' 元</td><td>'+fmt(totalMonthlySingle*12)+' 元</td><td class="diff-col">'+(totalMonthlySingle>salary?'+':'')+fmt((totalMonthlySingle-salary)*12)+' 元</td></tr>';
+    html+='</tbody>';
+    document.getElementById('detailTable').innerHTML=html;
+}
+
+// Initial calculation
+calculate();
+</script>
+
+</body>
+</html>

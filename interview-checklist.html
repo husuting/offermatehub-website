@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <title>面试准备清单 · 可勾选互动清单 | OfferMateHub</title>
+    <meta name="description" content="免费互动式面试准备清单，覆盖面试前一周/前一天/当天/之后四个阶段。可勾选、自动保存进度、一键重置。面试季不再遗漏任何准备环节。">
+    <link rel="canonical" href="https://offermatehub.cn/interview-checklist.html">
+    <link rel="preload" href="assets/css/master.css" as="style">
+    <link rel="preload" href="style.css" as="style">
+    <meta property="og:title" content="面试准备清单 · 可勾选互动清单 | OfferMateHub">
+    <meta property="og:description" content="互动式面试准备清单，覆盖面试前中后四个阶段。可勾选、自动保存。">
+    <meta property="og:url" content="https://offermatehub.cn/interview-checklist.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="面试准备清单 | OfferMateHub">
+    <meta name="twitter:description" content="互动式面试准备清单，覆盖面试前中后四个阶段。可勾选、自动保存。">
+    <link rel="icon" href="assets/img/logo/fabicon.png">
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/slicknav.css">
+    <link rel="stylesheet" href="assets/css/master.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checklist-container{max-width:760px;margin:0 auto}
+        .phase-card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:24px}
+        .phase-card h2{font-size:20px;color:#1c1b2e;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+        .phase-card .phase-badge{font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;color:#fff}
+        .phase-card .phase-badge.before{background:#fca25d}
+        .phase-card .phase-badge.eve{background:#7c5ce7}
+        .phase-card .phase-badge.day{background:#e74c3c}
+        .phase-card .phase-badge.after{background:#27ae60}
+        .phase-card .phase-desc{font-size:14px;color:#6d859e;margin-bottom:16px}
+        .checklist-item{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid #f0f2f5;cursor:pointer;transition:background .15s}
+        .checklist-item:hover{background:#faf8ff;margin:0 -12px;padding-left:12px;padding-right:12px;border-radius:6px}
+        .checklist-item:last-child{border-bottom:none}
+        .checklist-item input[type=checkbox]{display:none}
+        .checklist-item .checkbox-custom{min-width:24px;height:24px;border:2px solid #d0d5dd;border-radius:6px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;margin-top:2px}
+        .checklist-item.done .checkbox-custom{background:#7c5ce7;border-color:#7c5ce7}
+        .checklist-item.done .checkbox-custom::after{content:'\2714';color:#fff;font-size:14px;font-weight:700}
+        .checklist-item.done .item-text{color:#999;text-decoration:line-through}
+        .item-content{flex:1}
+        .item-content .item-text{font-size:15px;color:#555;line-height:1.6}
+        .item-content .item-tip{font-size:12px;color:#999;margin-top:2px}
+        .progress-bar-wrap{background:#f0f2f5;border-radius:10px;height:10px;margin:24px 0 8px;overflow:hidden}
+        .progress-bar-fill{background:linear-gradient(90deg,#7c5ce7,#fca25d);height:100%;border-radius:10px;transition:width .3s ease}
+        .progress-stats{display:flex;justify-content:space-between;font-size:14px;color:#6d859e;margin-bottom:8px}
+        .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+        .btn-outline{border:2px solid #7c5ce7;color:#7c5ce7;background:transparent;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+        .btn-outline:hover{background:#f8f0ff}
+        .tipps-section{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:24px}
+        .tipps-section h3{font-size:20px;color:#1c1b2e;margin-bottom:16px}
+        .tipp-item{margin-bottom:14px;padding-left:20px;border-left:3px solid #e8ecf1;font-size:15px;color:#555;line-height:1.8}
+        .tipp-item strong{color:#1c1b2e}
+        .site-header{padding:16px 0;border-bottom:1px solid #eef1f5;margin-bottom:48px}
+        .site-header .logo img{width:48px;height:48px;border-radius:50%}
+        .cta-banner{background:linear-gradient(135deg,#7c5ce7,#5b3cc4);border-radius:16px;padding:32px;text-align:center;color:#fff;margin-top:32px}
+        .cta-banner h3{color:#fff;font-size:22px;margin-bottom:8px}
+        .cta-banner p{color:rgba(255,255,255,.85);margin-bottom:20px}
+        footer{background:#1c1b2e;padding:40px 0;text-align:center;margin-top:64px}
+        @media(max-width:576px){.phase-card{padding:20px}}
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <a href="index.html" class="logo"><img src="assets/img/logo/OfferMateLogo.webp" alt="OfferMateHub"></a>
+            </div>
+            <div class="col text-right">
+                <a href="index.html" style="color:#6d859e;text-decoration:none;font-size:14px">&larr; 回首页</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container checklist-container">
+
+    <div style="text-align:center;margin-bottom:40px">
+        <h1 style="font-size:36px;color:#1c1b2e;margin-bottom:12px">面试准备清单</h1>
+        <p style="font-size:17px;color:#6d859e;max-width:560px;margin:0 auto">从面试前一周到面试结束后，每一步都帮你记住。勾选进度自动保存。</p>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="phase-card">
+        <div class="progress-stats">
+            <span>总进度</span>
+            <span id="progressText">0/20 项</span>
+        </div>
+        <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="progressBar" style="width:0%"></div>
+        </div>
+        <div class="btn-row" style="justify-content:flex-end">
+            <button class="btn-outline" onclick="resetAll()">重置全部</button>
+        </div>
+    </div>
+
+    <!-- Phase 1: 面试前一周 -->
+    <div class="phase-card" id="phase1">
+        <h2><span class="phase-badge before">阶段一</span> 面试前一周</h2>
+        <p class="phase-desc">提前准备，不打无准备之仗</p>
+
+        <label class="checklist-item" data-id="p1_1">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">研究目标公司：业务模式、主要产品、近期新闻、行业地位</div><div class="item-tip">官网 + 36氪/虎嗅报道 + 企查查</div></div>
+        </label>
+        <label class="checklist-item" data-id="p1_2">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">精读岗位JD，圈出关键技能词，准备对应案例</div><div class="item-tip">每个关键词准备一个具体案例支撑</div></div>
+        </label>
+        <label class="checklist-item" data-id="p1_3">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">准备"自我介绍"2分钟版本 + 1分钟精简版</div><div class="item-tip">对着镜子或录音练习至少3遍</div></div>
+        </label>
+        <label class="checklist-item" data-id="p1_4">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">准备3个"最有成就感的项目"故事，用STAR法则</div><div class="item-tip">情境→任务→行动→结果，每个控制在2分钟内</div></div>
+        </label>
+        <label class="checklist-item" data-id="p1_5">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">准备5个以上常见行为面试问题的回答</div><div class="item-tip">"你最大的弱点""为什么离开上家""职业规划"等</div></div>
+        </label>
+        <label class="checklist-item" data-id="p1_6">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">准备3-5个你问面试官的问题</div><div class="item-tip">团队规模/技术栈/入职前3个月的期望/成长路径</div></div>
+        </label>
+    </div>
+
+    <!-- Phase 2: 前一天 -->
+    <div class="phase-card" id="phase2">
+        <h2><span class="phase-badge eve">阶段二</span> 面试前一天</h2>
+        <p class="phase-desc">确认好所有细节，不留下任何不确定</p>
+
+        <label class="checklist-item" data-id="p2_1">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">确认面试时间、地点（或线上链接）、面试官姓名/职位</div><div class="item-tip">有疑问立刻联系HR确认</div></div>
+        </label>
+        <label class="checklist-item" data-id="p2_2">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">准备合适的着装</div><div class="item-tip">不确定Dress Code时，宁可偏正式</div></div>
+        </label>
+        <label class="checklist-item" data-id="p2_3">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">打印3份简历 + 作品集（如需）+ 笔记本和笔</div><div class="item-tip">线下面试必备——面试官可能不止一位</div></div>
+        </label>
+        <label class="checklist-item" data-id="p2_4">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">测试线上会议工具（如视频面试）：摄像头、麦克风、网络</div><div class="item-tip">提前进入会议室确认设备正常</div></div>
+        </label>
+        <label class="checklist-item" data-id="p2_5">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">查好路线/交通，预留30分钟缓冲时间</div><div class="item-tip">迟到是不可挽回的第一印象</div></div>
+        </label>
+        <label class="checklist-item" data-id="p2_6">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">睡眠充足，定好闹钟</div><div class="item-tip">不要熬夜临时抱佛脚</div></div>
+        </label>
+    </div>
+
+    <!-- Phase 3: 当天 -->
+    <div class="phase-card" id="phase3">
+        <h2><span class="phase-badge day">阶段三</span> 面试当天</h2>
+        <p class="phase-desc">调整好状态，展现出最好的自己</p>
+
+        <label class="checklist-item" data-id="p3_1">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">提前15分钟到达（线下面试）/ 提前5分钟进入会议室（线上面试）</div><div class="item-tip">太早也不好，给HR压力</div></div>
+        </label>
+        <label class="checklist-item" data-id="p3_2">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">微笑、眼神交流、有力但不死握的握手（线下）</div><div class="item-tip">前30秒决定了50%的第一印象</div></div>
+        </label>
+        <label class="checklist-item" data-id="p3_3">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">回答问题时先说结论，再用STAR展开</div><div class="item-tip">"一句话回答 → 展开细节 → 总结"，金字塔结构</div></div>
+        </label>
+        <label class="checklist-item" data-id="p3_4">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">遇到不会的问题坦诚承认，但展示思考过程</div><div class="item-tip">"这个我不太确定，但我的理解是..." 优于瞎编</div></div>
+        </label>
+        <label class="checklist-item" data-id="p3_5">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">面试最后，问2-3个准备好的问题</div><div class="item-tip">这是你了解团队、也展示思考的环节</div></div>
+        </label>
+    </div>
+
+    <!-- Phase 4: 之后 -->
+    <div class="phase-card" id="phase4">
+        <h2><span class="phase-badge after">阶段四</span> 面试之后</h2>
+        <p class="phase-desc">复盘总结，为下一轮或下一个Offer做准备</p>
+
+        <label class="checklist-item" data-id="p4_1">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">24小时内发送感谢信（邮件/微信）</div><div class="item-tip">简短即可：感谢时间 + 一个面试中提到的具体点 + 期待</div></div>
+        </label>
+        <label class="checklist-item" data-id="p4_2">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">趁记忆新鲜，写下面试复盘笔记</div><div class="item-tip">问了什么、你答了什么、哪里可以改进</div></div>
+        </label>
+        <label class="checklist-item" data-id="p4_3">
+            <input type="checkbox" onchange="toggleItem(this)"><span class="checkbox-custom"></span>
+            <div class="item-content"><div class="item-text">在OfferMateHub或面试日历上更新状态</div><div class="item-tip">记录结果：通过/待定/淘汰，以及下一轮时间</div></div>
+        </label>
+    </div>
+
+    <!-- Extra tips -->
+    <div class="tipps-section">
+        <h3>面试加分技巧</h3>
+        <div class="tipp-item"><strong>反向调查面试官：</strong>如果知道面试官姓名，提前在LinkedIn/脉脉上查看其背景，面试中可以更有针对性地沟通。</div>
+        <div class="tipp-item"><strong>带一份"面试地图"笔记：</strong>一张纸上记着：公司核心数据 + 你准备问的问题 + STAR故事关键词。面试时可以看一眼，比看手机好得多。</div>
+        <div class="tipp-item"><strong>薪资谈判时：</strong>不要先出价。如果被追问目前薪资，可以说"我更想先了解这个岗位的薪资范围，看是否匹配"。</div>
+        <div class="tipp-item"><strong>面试后不要干等：</strong>继续投递、继续面试。把每次面试当作练习，直到正式签Offer为止。永远不要在只有一个选择的时候做决策。</div>
+        <div class="tipp-item"><strong>使用面试日历：</strong>不要只依赖手机日历——面试、私事混在一起很容易遗漏。OfferMateHub的面试日历与投递进度联动，每场面试都有上下文。</div>
+    </div>
+
+    <div class="cta-banner">
+        <h3>把面试管理交给 OfferMateHub</h3>
+        <p>面试日历自动提醒 + 投递进度看板 + 面试复盘笔记，微信小程序一站式管理。</p>
+        <a href="index.html" style="display:inline-block;background:#fff;color:#7c5ce7;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none">了解 OfferMateHub →</a>
+        <p style="font-size:14px;margin-top:12px;opacity:.75">微信搜「OfferMateHub」小程序直接使用，永久免费</p>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p style="color:rgba(255,255,255,.5);font-size:14px;margin:0">&copy; 2026 OfferMateHub. All rights reserved.</p>
+        <p style="color:rgba(255,255,255,.35);font-size:12px;margin:10px 0 0">
+            <a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none">首页</a> &nbsp;|&nbsp;
+            <a href="wxyj-calculator.html" style="color:rgba(255,255,255,.35);text-decoration:none">五险一金计算器</a> &nbsp;|&nbsp;
+            <a href="templates.html" style="color:rgba(255,255,255,.35);text-decoration:none">求职模板</a> &nbsp;|&nbsp;
+            <a href="rest-calculator.html" style="color:rgba(255,255,255,.35);text-decoration:none">双休vs单休计算器</a> &nbsp;|&nbsp;
+            <a href="mailto:2042949429@qq.com" style="color:rgba(255,255,255,.35);text-decoration:none">2042949429@qq.com</a>
+        </p>
+    </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "面试准备清单",
+  "description": "从面试前一周到面试结束后，覆盖四个阶段的完整面试准备清单，每项可勾选、进度自动保存。",
+  "url": "https://offermatehub.cn/interview-checklist.html",
+  "step": [
+    {"@type": "HowToStep", "name": "面试前一周", "text": "研究公司、精读JD、准备自我介绍和STAR故事、准备反问问题。"},
+    {"@type": "HowToStep", "name": "面试前一天", "text": "确认时间地点、准备着装、打印简历、测试设备、查路线。"},
+    {"@type": "HowToStep", "name": "面试当天", "text": "提前到达、注意仪态、结论先行回答、准备反问。"},
+    {"@type": "HowToStep", "name": "面试之后", "text": "发送感谢信、写复盘笔记、更新求职状态。"}
+  ]
+}
+</script>
+
+<script>
+var STORAGE_KEY='omh_interview_checklist';
+var totalItems=0;
+
+function init(){
+    var checkboxes=document.querySelectorAll('.checklist-item input[type=checkbox]');
+    totalItems=checkboxes.length;
+    var saved=loadState();
+    checkboxes.forEach(function(cb){
+        var id=cb.parentElement.getAttribute('data-id');
+        if(saved[id]){
+            cb.checked=true;
+            cb.parentElement.classList.add('done');
+        }
+    });
+    updateProgress();
+}
+
+function loadState(){
+    try{return JSON.parse(localStorage.getItem(STORAGE_KEY))||{};}catch(e){return {};}
+}
+
+function saveState(){
+    var state={};
+    document.querySelectorAll('.checklist-item input[type=checkbox]').forEach(function(cb){
+        state[cb.parentElement.getAttribute('data-id')]=cb.checked;
+    });
+    try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){}
+}
+
+function toggleItem(cb){
+    if(cb.checked){
+        cb.parentElement.classList.add('done');
+    }else{
+        cb.parentElement.classList.remove('done');
+    }
+    saveState();
+    updateProgress();
+}
+
+function updateProgress(){
+    var done=document.querySelectorAll('.checklist-item input[type=checkbox]:checked').length;
+    var pct=totalItems>0?Math.round(done/totalItems*100):0;
+    document.getElementById('progressBar').style.width=pct+'%';
+    document.getElementById('progressText').textContent=done+'/'+totalItems+' 项';
+}
+
+function resetAll(){
+    if(confirm('确定要重置所有勾选吗？')){
+        document.querySelectorAll('.checklist-item input[type=checkbox]').forEach(function(cb){
+            cb.checked=false;
+            cb.parentElement.classList.remove('done');
+        });
+        saveState();
+        updateProgress();
+    }
+}
+
+init();
+</script>
+
+</body>
+</html>

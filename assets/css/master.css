@@ -870,8 +870,9 @@ HEADER AREA CSS
   transition: all 0.3s;
 }
 .main_menu ul li a {
-  padding: 40px 13px;
+  padding: 40px 10px;
   color: #ffffff;
+  font-size: 15px;
 }
 .main_menu ul li ul {
   position: absolute;
