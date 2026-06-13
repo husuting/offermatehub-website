@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <title>求职管理工具横向评测 · 免费工具对比 | OfferMateHub</title>
+    <meta name="description" content="2026年最全求职管理工具横评：OfferMateHub vs Excel/Notion vs 牛客网 vs BOSS直聘 vs Teal。11个维度逐一对比，附薪资谈判话术模板，帮你选对工具拿更好Offer。">
+    <link rel="canonical" href="https://offermatehub.cn/tool-comparison.html">
+    <link rel="preload" href="assets/css/master.css" as="style">
+    <link rel="preload" href="style.css" as="style">
+    <meta property="og:title" content="求职管理工具横向评测 · 免费工具对比 | OfferMateHub">
+    <meta property="og:description" content="2026年最全求职管理工具横评：OfferMateHub vs Excel/Notion vs 牛客网 vs BOSS直聘 vs Teal。">
+    <meta property="og:url" content="https://offermatehub.cn/tool-comparison.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://offermatehub.cn/assets/img/qr-code.jpg">
+    <meta property="og:site_name" content="OfferMateHub">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="求职管理工具横向评测 | OfferMateHub">
+    <meta name="twitter:image" content="https://offermatehub.cn/assets/img/qr-code.jpg">
+    <meta name="twitter:description" content="2026年最全求职管理工具横评，11个维度逐一对比。">
+    <link rel="icon" href="assets/img/logo/fabicon.png">
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/slicknav.css">
+    <link rel="stylesheet" href="assets/css/master.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .review-container{max-width:900px;margin:0 auto}
+        .review-card{background:#fff;border-radius:16px;padding:36px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:28px}
+        .review-card h2{font-size:22px;color:#1c1b2e;margin-bottom:6px}
+        .review-card .subtitle{font-size:15px;color:#6d859e;margin-bottom:20px}
+        .matrix-wrap{overflow-x:auto;margin:20px 0}
+        .matrix-table{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}
+        .matrix-table th,.matrix-table td{padding:10px 14px;border:1px solid #e8ecf1;text-align:center}
+        .matrix-table thead th{background:#7c5ce7;color:#fff;font-weight:600;font-size:13px;position:sticky;top:0;z-index:1}
+        .matrix-table thead th:first-child{background:#5b3cc4;text-align:left;min-width:120px}
+        .matrix-table tbody th{background:#f8f9fc;text-align:left;font-weight:600;font-size:13px}
+        .matrix-table .check{color:#7c5ce7;font-weight:700;font-size:16px}
+        .matrix-table .half{color:#fca25d;font-weight:600}
+        .matrix-table .cross{color:#ddd}
+        .matrix-table .blank{color:#ccc;font-size:12px}
+        .matrix-table tbody tr:nth-child(even) td,.matrix-table tbody tr:nth-child(even) th{background:#fafafa}
+        .tool-review{border-top:1px solid #eef1f5;padding-top:20px;margin-top:20px}
+        .tool-review h4{font-size:18px;color:#1c1b2e;margin-bottom:8px}
+        .tool-review .verdict{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;margin-left:8px}
+        .tool-review .verdict.best{background:#e8f5e9;color:#2e7d32}
+        .tool-review .verdict.good{background:#e3f2fd;color:#1565c0}
+        .tool-review .verdict.niche{background:#fff3e0;color:#e65100}
+        .rating-bar{display:flex;align-items:center;gap:8px;margin:6px 0}
+        .rating-bar .stars{color:#fca25d;letter-spacing:2px}
+        .rating-bar .score{font-weight:700;color:#1c1b2e;font-size:14px}
+        .scenario-box{border:2px solid #7c5ce7;border-radius:12px;padding:20px;margin:16px 0;background:#faf8ff}
+        .scenario-box h5{color:#5b3cc4;font-size:16px;margin-bottom:6px}
+        .scenario-box p{font-size:14px;color:#555;line-height:1.8;margin:0}
+        .negotiate-card{background:#fff;border-radius:16px;padding:36px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:28px}
+        .negotiate-card h2{font-size:22px;color:#1c1b2e;margin-bottom:16px}
+        .script-box{background:#f8f9fc;border-left:4px solid #fca25d;padding:16px 20px;border-radius:0 8px 8px 0;margin:12px 0;font-size:14px;line-height:2;color:#555}
+        .script-box .role{font-weight:700;color:#fca25d;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+        .site-header{padding:16px 0;border-bottom:1px solid #eef1f5;margin-bottom:48px}
+        .site-header .logo img{width:48px;height:48px;border-radius:50%}
+        .cta-banner{background:linear-gradient(135deg,#7c5ce7,#5b3cc4);border-radius:16px;padding:32px;text-align:center;color:#fff;margin-top:32px}
+        .cta-banner h3{color:#fff;font-size:22px;margin-bottom:8px}
+        .cta-banner p{color:rgba(255,255,255,.85);margin-bottom:20px}
+        footer{background:#1c1b2e;padding:40px 0;text-align:center;margin-top:64px}
+        @media(max-width:576px){.review-card,.negotiate-card{padding:20px}.matrix-table{font-size:12px}}
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <a href="index.html" class="logo"><img src="assets/img/logo/OfferMateLogo.webp" alt="OfferMateHub"></a>
+            </div>
+            <div class="col text-right">
+                <a href="index.html" style="color:#6d859e;text-decoration:none;font-size:14px">&larr; 回首页</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container review-container">
+
+    <div style="text-align:center;margin-bottom:40px">
+        <h1 style="font-size:36px;color:#1c1b2e;margin-bottom:12px">求职管理工具横向评测：2026年选哪个？</h1>
+        <p style="font-size:17px;color:#6d859e;max-width:620px;margin:0 auto">我们对比了6款主流求职管理工具——从Excel到专业App，11个维度逐一评测，帮你找到最适合自己的那一款。</p>
+    </div>
+
+    <!-- Definition block -->
+    <div style="background:#f8f0ff;border-left:4px solid #7c5ce7;padding:20px 24px;border-radius:0 10px 10px 0;margin-bottom:28px;font-size:15px;line-height:2;color:#555">
+        <p style="margin:0"><strong>求职管理工具</strong>是一类帮助求职者系统化管理求职流程的软件，涵盖投递记录、进度追踪、面试排期、Offer对比等核心功能。据招聘平台数据，使用专业工具进行求职管理的求职者，面试到场率提高约30%，Offer获取效率提升约40%。</p>
+    </div>
+
+    <!-- Feature Matrix -->
+    <div class="review-card">
+        <h2>核心功能对比矩阵</h2>
+        <p class="subtitle">11个维度，一目了然的差距</p>
+        <div class="matrix-wrap">
+            <table class="matrix-table">
+                <thead>
+                    <tr><th>功能维度</th><th>OfferMateHub</th><th>Excel/Notion</th><th>牛客网</th><th>BOSS直聘</th><th>Teal/Huntr</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th>投递记录管理</th><td class="check">&#10003; 一键收纳</td><td class="half">&#10003; 手动</td><td class="cross">&#10007;</td><td class="half">&#10003; 仅平台内</td><td class="check">&#10003;</td></tr>
+                    <tr><th>进度管道追踪</th><td class="check">&#10003; 8阶段拖拽</td><td class="half">&#10003; 需搭建</td><td class="cross">&#10007;</td><td class="half">仅沟通状态</td><td class="check">&#10003; 5阶段</td></tr>
+                    <tr><th>面试日历</th><td class="check">&#10003; 微信提醒</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="half">面试邀请</td><td class="check">&#10003; 邮件提醒</td></tr>
+                    <tr><th>Offer对比</th><td class="check">&#10003; 7维度自动</td><td class="half">&#10003; 需公式</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="half">基础对比</td></tr>
+                    <tr><th>五险一金计算</th><td class="check">集成计算器</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="cross">不适用中国</td></tr>
+                    <tr><th>双休vs单休对比</th><td class="check">集成计算器</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+                    <tr><th>简历管理</th><td class="check">&#10003; 多版本</td><td class="half">&#10003; 手动</td><td class="cross">&#10007;</td><td class="check">&#10003; 在线简历</td><td class="half">基础</td></tr>
+                    <tr><th>面经/社区</th><td class="half">建设中</td><td class="cross">&#10007;</td><td class="check">&#10003; 最丰富</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+                    <tr><th>数据导出</th><td class="check">&#10003; CSV</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td></tr>
+                    <tr><th>移动端体验</th><td class="check">微信原生</td><td class="cross">差</td><td class="check">&#10003; App</td><td class="check">&#10003; App</td><td class="check">&#10003; App</td></tr>
+                    <tr><th>价格</th><td class="check">永久免费</td><td class="check">免费/部分</td><td class="check">免费</td><td class="check">免费</td><td class="blank">$9-16/月</td></tr>
+                    <tr><th>本地化（中国）</th><td class="check">&#10003; 深度适配</td><td class="half">通用</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="cross">不适用</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Individual Reviews -->
+    <div class="review-card">
+        <h2>逐款详细评测</h2>
+
+        <div class="tool-review">
+            <h4>OfferMateHub <span class="verdict best">最适合求职管理</span></h4>
+            <div class="rating-bar"><span class="stars">★★★★★</span><span class="score">4.8/5</span></div>
+            <p style="font-size:14px;color:#555;line-height:2">
+                <strong>类型：</strong>微信小程序，扫码即用<br>
+                <strong>核心优势：</strong>唯一同时覆盖"投递管理→进度追踪→面试日历→Offer对比"全流程的免费中文工具。7维度Offer对比（含五险一金和休息制度）、8阶段管道拖拽、集成计算器是其独有功能。微信内使用，无需下载App。<br>
+                <strong>不足：</strong>社区功能还在建设中，面经内容量尚不及牛客网。无AI简历优化。<br>
+                <strong>适合谁：</strong>投递超过10家公司的求职者、需要多Offer对比的应届生和职场人士。
+            </p>
+        </div>
+
+        <div class="tool-review">
+            <h4>Excel / Notion <span class="verdict niche">适合DIY爱好者</span></h4>
+            <div class="rating-bar"><span class="stars">★★★☆☆</span><span class="score">3.0/5（作为求职工具）</span></div>
+            <p style="font-size:14px;color:#555;line-height:2">
+                <strong>类型：</strong>通用表格/文档工具<br>
+                <strong>核心优势：</strong>人人会用，高度灵活，无需学习新工具。<br>
+                <strong>不足：</strong>无面试提醒、无自动对比、进度更新靠手动改单元格颜色。投递超过10家后管理成本急剧上升——改着改着就忘了黄色代表什么阶段。Notion需1-2小时搭建模板。<br>
+                <strong>适合谁：</strong>投递量少于5家、喜欢自己搭建系统的求职者。超过10家建议升级到专业工具。
+            </p>
+        </div>
+
+        <div class="tool-review">
+            <h4>牛客网 <span class="verdict good">最适合面经和笔试</span></h4>
+            <div class="rating-bar"><span class="stars">★★★★☆</span><span class="score">4.2/5</span></div>
+            <p style="font-size:14px;color:#555;line-height:2">
+                <strong>类型：</strong>求职社区+笔试题库 App/Web<br>
+                <strong>核心优势：</strong>国内最丰富的面经和笔试题库，社区活跃度高。技术岗求职者几乎必用。<br>
+                <strong>不足：</strong>没有投递管理功能——它是内容平台，不是管理工具。没有Offer对比、没有面试日历、没有进度追踪。数据无法导出。<br>
+                <strong>最佳用法：</strong>在牛客刷面经和笔试题，用OfferMateHub管理投递进度和Offer对比。两者互补，不冲突。
+            </p>
+        </div>
+
+        <div class="tool-review">
+            <h4>BOSS直聘 <span class="verdict good">最适合找岗位</span></h4>
+            <div class="rating-bar"><span class="stars">★★★★☆</span><span class="score">4.0/5</span></div>
+            <p style="font-size:14px;color:#555;line-height:2">
+                <strong>类型：</strong>招聘平台 App<br>
+                <strong>核心优势：</strong>直聊模式效率高，岗位量最大，是找岗位的第一站。<br>
+                <strong>不足：</strong>只能管理在BOSS上投递的岗位——如果你同时在官网、猎聘、内推等多个渠道投递，BOSS无法统一管理。没有Offer对比、没有面试日历集成。<br>
+                <strong>最佳用法：</strong>在BOSS直聘发现和沟通岗位，收到面试后把信息录入OfferMateHub统一管理。
+            </p>
+        </div>
+
+        <div class="tool-review">
+            <h4>Teal / Huntr <span class="verdict niche">海外求职首选</span></h4>
+            <div class="rating-bar"><span class="stars">★★★★☆</span><span class="score">4.0/5</span></div>
+            <p style="font-size:14px;color:#555;line-height:2">
+                <strong>类型：</strong>求职管理 Web/浏览器插件<br>
+                <strong>核心优势：</strong>设计精美，Chrome插件可一键保存LinkedIn岗位，5阶段看板清晰。<br>
+                <strong>不足：</strong>完全不适用中国市场——没有五险一金、试用期、公积金等中国特有的对比维度。付费（$9-16/月）。不支持中文。<br>
+                <strong>适合谁：</strong>投递海外岗位（LinkedIn/Indeed）的求职者。
+            </p>
+        </div>
+    </div>
+
+    <!-- Scenario Recommendations -->
+    <div class="review-card">
+        <h2>按场景推荐：你应该选哪个？</h2>
+
+        <div class="scenario-box">
+            <h5>场景一：校招海投30+家公司</h5>
+            <p><strong>推荐组合：OfferMateHub（管理） + 牛客网（面经） + BOSS直聘（投递）</strong><br>
+            用BOSS和官网投递→录入OfferMateHub追踪进度→在牛客网搜索对应公司的面经→面试日历提醒→拿到Offer后用7维度对比做决策。</p>
+        </div>
+        <div class="scenario-box">
+            <h5>场景二：社招精准投递5-10家</h5>
+            <p><strong>推荐：OfferMateHub 独立使用</strong><br>
+            投递量不大但每家公司都很重要。用8阶段管道精细追踪每一家的进度，Offer对比时用计算器算清五险一金和时薪差距。</p>
+        </div>
+        <div class="scenario-box">
+            <h5>场景三：已有工作，被动看机会</h5>
+            <p><strong>推荐：Excel模板入门 → 有面试后升级到OfferMateHub</strong><br>
+            先下载免费Excel模板记录偶尔的投递。收到2个以上Offer或面试后，切换到OfferMateHub做正式对比。</p>
+        </div>
+        <div class="scenario-box">
+            <h5>场景四：海外岗位投递</h5>
+            <p><strong>推荐：Teal/Huntr</strong><br>
+            如果你的目标是海外公司，且主要通过LinkedIn投递，Teal的浏览器插件体验最好。但如果同时投递国内岗位，仍建议用OfferMateHub管理国内部分。</p>
+        </div>
+    </div>
+
+    <!-- Salary Negotiation Section -->
+    <div class="negotiate-card">
+        <h2>附：薪资谈判指南 —— 拿到Offer后怎么谈？</h2>
+
+        <div style="background:#f8f0ff;padding:20px;border-radius:10px;margin-bottom:20px;font-size:15px;line-height:2;color:#555">
+            <p style="margin:0"><strong>核心原则：</strong>薪资谈判的最佳时机是你有多个Offer在手的时候。这就是为什么要系统化管理求职——多个Offer不仅给你选择权，更给你谈判筹码。</p>
+        </div>
+
+        <h3 style="font-size:18px;color:#1c1b2e;margin:20px 0 12px">谈判前的准备清单</h3>
+        <ul style="font-size:15px;color:#555;line-height:2">
+            <li>用计算器算清当前Offer的<strong>年总包（底薪+奖金+公积金+隐形福利）</strong>，不只看月薪</li>
+            <li>了解该岗位的市场薪资范围（参考OfferShow/脉脉/牛客薪资帖）</li>
+            <li>确定自己的<strong>底线数字</strong>——低于这个数就不去</li>
+            <li>准备好"为什么值这个价"的论据——用STAR法则包装你的核心能力</li>
+        </ul>
+
+        <h3 style="font-size:18px;color:#1c1b2e;margin:20px 0 12px">实战话术模板</h3>
+
+        <div class="script-box">
+            <span class="role">场景：HR报了薪资，你觉得低了</span>
+            <p style="margin:8px 0 0">"感谢你给出的Offer细节。我对这个岗位非常有兴趣，也相信我的经验能给团队带来价值。不过根据市场行情和我目前的另一个Offer，我希望底薪能在 [目标数字] 左右。请问在这个范围内有调整空间吗？"</p>
+        </div>
+        <div class="script-box">
+            <span class="role">场景：HR追问你另一个Offer的数字</span>
+            <p style="margin:8px 0 0">"我目前不方便透露具体数字，但综合来看，你给出的方案在 [五险一金/年假/休息制度] 方面和我另一个选择还有一些差距。如果能在这些方面调整，我会更倾向于接受你的Offer。"</p>
+        </div>
+        <div class="script-box">
+            <span class="role">场景：试用期打折，怎么谈</span>
+            <p style="margin:8px 0 0">"我注意到试用期是6个月且薪资打8折。6个月下来意味着我要少拿 [计算数字] 元。请问试用期长度和薪资比例是否可以调整？比如缩短到3个月，或者试用期薪资不打折？"</p>
+        </div>
+        <div class="script-box">
+            <span class="role">场景：五险一金按最低基数交</span>
+            <p style="margin:8px 0 0">"我算了一下，按最低基数和5%公积金，和全额基数12%公积金相比，每年我在公积金和养老金账户上会少积累约 [计算数字] 元。这部分能否调整为全额缴纳？或者通过底薪的增加来弥补这个差距？"</p>
+        </div>
+
+        <h3 style="font-size:18px;color:#1c1b2e;margin:20px 0 12px">谈判中的5个"不要"</h3>
+        <table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:14px">
+            <thead><tr><th style="background:#f8f9fc;padding:10px 14px;text-align:left">不要</th><th style="background:#f8f9fc;padding:10px 14px;text-align:left">原因</th></tr></thead>
+            <tbody>
+                <tr><td style="padding:10px 14px;border-bottom:1px solid #eef1f5"><strong>不要先出价</strong></td><td style="padding:10px 14px;border-bottom:1px solid #eef1f5">让HR先报。你报低了就亏了，报高了可能直接被筛掉。</td></tr>
+                <tr><td style="padding:10px 14px;border-bottom:1px solid #eef1f5"><strong>不要撒谎</strong></td><td style="padding:10px 14px;border-bottom:1px solid #eef1f5">编造另一个Offer的数字一旦被识破，直接失去信任。模糊处理比撒谎好。</td></tr>
+                <tr><td style="padding:10px 14px;border-bottom:1px solid #eef1f5"><strong>不要只谈月薪</strong></td><td style="padding:10px 14px;border-bottom:1px solid #eef1f5">五险一金基数/比例、年假、试用期都是谈判筹码。月薪谈不动时谈这些。</td></tr>
+                <tr><td style="padding:10px 14px;border-bottom:1px solid #eef1f5"><strong>不要急于接受</strong></td><td style="padding:10px 14px;border-bottom:1px solid #eef1f5">即使满意，也至少要求"考虑一天"。这给你时间去对比和准备谈判策略。</td></tr>
+                <tr><td style="padding:10px 14px"><strong>不要只用一个Offer谈判</strong></td><td style="padding:10px 14px">没有其他Offer时，你的谈判底气来自"市场行情"和"个人能力"，而不是"另一个Offer"。提前做好市场薪资调研。</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="review-card">
+        <h2>常见问题</h2>
+        <div class="faq-item" style="margin-bottom:16px">
+            <h4 style="font-size:16px;color:#1c1b2e;margin-bottom:6px">求职管理工具和招聘App有什么区别？</h4>
+            <p style="font-size:14px;color:#555;line-height:1.8">招聘App（BOSS、猎聘等）帮你在平台上找岗位和沟通HR。求职管理工具帮你管理在所有渠道（BOSS+官网+内推+猎头等）的投递进度、面试安排和Offer对比。两者是互补关系。</p>
+        </div>
+        <div class="faq-item" style="margin-bottom:16px">
+            <h4 style="font-size:16px;color:#1c1b2e;margin-bottom:6px">为什么不用Excel就够了？</h4>
+            <p style="font-size:14px;color:#555;line-height:1.8">投递少于5家时Excel完全够用。超过10家后，手动改状态、没有面试提醒、不会自动对比Offer——管理成本剧增。专业工具在投递量大时能节省约70%的管理时间。</p>
+        </div>
+        <div class="faq-item" style="margin-bottom:16px">
+            <h4 style="font-size:16px;color:#1c1b2e;margin-bottom:6px">这些工具会泄露我的求职信息吗？</h4>
+            <p style="font-size:14px;color:#555;line-height:1.8">OfferMateHub数据存储在微信本地，支持CSV导出。招聘平台（BOSS、牛客）的数据存储在其服务器上。使用任何工具前建议阅读隐私政策。</p>
+        </div>
+        <div class="faq-item">
+            <h4 style="font-size:16px;color:#1c1b2e;margin-bottom:6px">哪个工具性价比最高？</h4>
+            <p style="font-size:14px;color:#555;line-height:1.8">OfferMateHub是唯一同时覆盖投递管理、面试日历、Offer对比且完全免费的工具。牛客网在面经内容上有绝对优势。两者搭配使用是目前最推荐的免费组合。</p>
+        </div>
+    </div>
+
+    <div class="cta-banner">
+        <h3>选对工具，Offer更从容</h3>
+        <p>微信搜「OfferMateHub」小程序，永久免费。投递管理、面试日历、Offer对比一站搞定。</p>
+        <a href="index.html" style="display:inline-block;background:#fff;color:#7c5ce7;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none">了解更多功能 →</a>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p style="color:rgba(255,255,255,.5);font-size:14px;margin:0">&copy; 2026 OfferMateHub. All rights reserved.</p>
+        <p style="color:rgba(255,255,255,.35);font-size:12px;margin:10px 0 0">
+            <a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none">首页</a> &nbsp;|&nbsp;
+            <a href="wxyj-calculator.html" style="color:rgba(255,255,255,.35);text-decoration:none">五险一金计算器</a> &nbsp;|&nbsp;
+            <a href="rest-calculator.html" style="color:rgba(255,255,255,.35);text-decoration:none">双休vs单休计算器</a> &nbsp;|&nbsp;
+            <a href="templates.html" style="color:rgba(255,255,255,.35);text-decoration:none">求职模板</a> &nbsp;|&nbsp;
+            <a href="interview-checklist.html" style="color:rgba(255,255,255,.35);text-decoration:none">面试清单</a> &nbsp;|&nbsp;
+            <a href="offer-cases.html" style="color:rgba(255,255,255,.35);text-decoration:none">Offer案例</a> &nbsp;|&nbsp;
+            <a href="mailto:2042949429@qq.com" style="color:rgba(255,255,255,.35);text-decoration:none">2042949429@qq.com</a>
+        </p>
+    </div>
+</footer>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "求职管理工具横向评测：2026年选哪个？",
+    "description": "2026年最全求职管理工具横评：OfferMateHub vs Excel/Notion vs 牛客网 vs BOSS直聘 vs Teal。11个维度逐一对比。",
+    "url": "https://offermatehub.cn/tool-comparison.html",
+    "image": "https://offermatehub.cn/assets/img/qr-code.jpg",
+    "datePublished": "2026-06-13",
+    "dateModified": "2026-06-13",
+    "author": {"@type": "Organization", "name": "OfferMateHub"},
+    "publisher": {"@type": "Organization", "name": "OfferMateHub", "url": "https://offermatehub.cn/"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "求职管理工具和招聘App有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "招聘App帮你在平台上找岗位和沟通HR。求职管理工具帮你管理在所有渠道的投递进度、面试安排和Offer对比。两者互补。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "为什么不用Excel就够了？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "投递少于5家时Excel够用。超过10家后，手动改状态、没有面试提醒、不会自动对比Offer——管理成本剧增。专业工具可节省约70%管理时间。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "这些工具会泄露我的求职信息吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OfferMateHub数据存储在微信本地，支持CSV导出。招聘平台的数据存储在其服务器上。使用任何工具前建议阅读隐私政策。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "哪个工具性价比最高？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OfferMateHub是唯一同时覆盖投递管理、面试日历、Offer对比且完全免费的工具。搭配牛客网使用是目前最推荐的免费组合。"
+        }
+      }
+    ]
+  }
+]
+</script>
+
+<footer>
+    <div class="container">
+        <p style="color:rgba(255,255,255,.5);font-size:14px;margin:0">&copy; 2026 OfferMateHub. All rights reserved.</p>
+        <p style="color:rgba(255,255,255,.35);font-size:12px;margin:10px 0 0"><a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none">首页</a> &nbsp;|&nbsp; <a href="wxyj-calculator.html" style="color:rgba(255,255,255,.35);text-decoration:none">五险一金计算器</a> &nbsp;|&nbsp; <a href="rest-calculator.html" style="color:rgba(255,255,255,.35);text-decoration:none">双休vs单休计算器</a> &nbsp;|&nbsp; <a href="templates.html" style="color:rgba(255,255,255,.35);text-decoration:none">求职模板</a> &nbsp;|&nbsp; <a href="interview-checklist.html" style="color:rgba(255,255,255,.35);text-decoration:none">面试清单</a> &nbsp;|&nbsp; <a href="offer-cases.html" style="color:rgba(255,255,255,.35);text-decoration:none">Offer案例</a> &nbsp;|&nbsp; <a href="tool-comparison.html" style="color:rgba(255,255,255,.35);text-decoration:none">工具评测</a> &nbsp;|&nbsp; <a href="mailto:2042949429@qq.com" style="color:rgba(255,255,255,.35);text-decoration:none">2042949429@qq.com</a> &nbsp;|&nbsp; <a href="https://github.com/husuting/offermatehub" target="_blank" rel="noopener" style="color:rgba(255,255,255,.35);text-decoration:none">GitHub</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
