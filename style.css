@@ -1,5 +1,8 @@
 /* OfferMate Hub custom styles */
 
+/* ========== Skip-to-content ========== */
+.skip-link:focus{top:16px !important}
+
 /* ========== Danmaku 弹幕 ========== */
 .danmaku-container {
   padding: 24px 0 40px;
